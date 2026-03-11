@@ -45,24 +45,26 @@ p {
 
 <p class="headphones" onclick="playMusic()">🎧</p>
 
-<audio id="musica" loop>
+<audio id="musica" loop autoplay>
   <source src="Sen Anlat Karadeniz - Gitme Kal V3 (Vokal Versiyon).opus" type="audio/ogg">
 </audio>
 
 <script>
+var audio = document.getElementById('musica');
+audio.volume = 0.07;
+
 function playMusic() {
-  var audio = document.getElementById('musica');
-  audio.volume = 0.07;
-  audio.play();
+  audio.play().catch(function(){});
 }
 
-// Versuch Autoplay beim Laden; wenn blockiert, startet es beim ersten Klick (siehe oben)
+// sofort beim Laden versuchen
 window.addEventListener('load', function() {
-  var audio = document.getElementById('musica');
-  audio.volume = 0.07;
-  audio.play().catch(function() {
-    // Autoplay wurde vom Browser blockiert -> dann nur über Klick auf 🎧
-  });
+  var p = audio.play();
+  if (p !== undefined) {
+    p.catch(function() {
+      // Browser hat Autoplay blockiert – dann eben erst bei Klick
+    });
+  }
 });
 </script>
 
