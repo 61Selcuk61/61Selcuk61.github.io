@@ -1,57 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta name="google-site-verification" content="xunUwv-LuCQYiln7aeW7iZ20598nQiWFye5KM9Yal3g" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="xunUwv-LuCQYiln7aeW7iZ20598nQiWFye5KM9Yal3g" />
 <meta name="description" content="Selcuk Kirci - Mensaje personal">
-<meta name="author" content="Selcuk Kirci">
 <title>Selcuk Kirci</title>
 <style>
 body {
   background: black;
   color: white;
-  font-family: Georgia;
+  font-family: Georgia, serif;
   font-size: 32px;
   text-align: center;
   padding: 50px 20px;
   margin: 0;
 }
-h1 {
-  font-size: 0;
-  margin: 0;
-  position: absolute;
-  left: -9999px;
+p {
+  margin: 30px 0;
+}
+.rose {
+  font-size: 80px;
+  margin: 50px 0;
+}
+.firma {
+  margin-top: 60px;
+  font-size: 22px;
+  opacity: 0.9;
+}
+.headphones {
+  font-size: 50px;
+  margin-top: 100px;
+  cursor: pointer;
 }
 </style>
 </head>
 <body>
 
-<h1>Selcuk Kirci</h1>
-
 <p>Yo también pensé en ti.</p>
 
-<p style="font-size:100px; margin:50px 0;">🥀</p>
+<p class="rose">🥀</p>
 
-<p>Con cariño, tu 61.</p>
+<p class="firma">Con cariño, tu 61.</p>
 
-<p style="font-size:50px; margin-top:100px; cursor:pointer;" onclick="playMusic()">🎧</p>
+<p class="headphones" onclick="playMusic()">🎧</p>
 
 <audio id="musica" loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
+  <source src="Sen Anlat Karadeniz - Gitme Kal V3 (Vokal Versiyon).opus" type="audio/ogg">
 </audio>
 
 <script>
 function playMusic() {
   var audio = document.getElementById('musica');
-  audio.volume = 0.1;
+  audio.volume = 0.07;
   audio.play();
 }
 
+// Versuch Autoplay beim Laden; wenn blockiert, startet es beim ersten Klick (siehe oben)
 window.addEventListener('load', function() {
   var audio = document.getElementById('musica');
-  audio.volume = 0.1;
-  audio.play().catch(function() {});
+  audio.volume = 0.07;
+  audio.play().catch(function() {
+    // Autoplay wurde vom Browser blockiert -> dann nur über Klick auf 🎧
+  });
 });
 </script>
 
