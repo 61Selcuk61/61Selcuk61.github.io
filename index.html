@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="de"> <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="xunUwv-LuCQYiln7aeW7iZ20598nQiWFye5KM9Yal3g" />
-<meta name="description" content="Selcuk Kirci - Mensaje personal">
-<title>Selcuk Kirci</title>
+<meta name="description" content="Offizielle Webseite von Selcuk Kirci.">
+<title>Selcuk Kirci | Portfolio & Personal Page</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Selcuk Kirci",
+  "url": "https://selcuk-kirci.github.io", 
+  "jobTitle": "Developer / Creative", 
+  "sameAs": [
+    "https://github.com/DEIN-NUTZERNAME" 
+  ]
+}
+</script>
+
 <style>
+/* Dein bestehender Style */
 body {
   background: black;
   color: white;
@@ -16,41 +30,31 @@ body {
   padding: 50px 20px;
   margin: 0;
 }
-p {
-  margin: 30px 0;
+/* Unsichtbare H1 für SEO, falls du den Namen oben nicht sehen willst */
+.seo-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
-.rose {
-  font-size: 80px;
-  margin: 50px 0;
-}
-.firma {
-  margin-top: 60px;
-  font-size: 22px;
-  opacity: 0.9;
-}
-.headphones {
-  font-size: 50px;
-  margin-top: 100px;
-  cursor: pointer;
-}
-.hint {
-  font-size: 22px;
-  opacity: 0.8;
-  margin-top: 10px;
-}
-.namefoot {
-  font-size: 14px;
-  opacity: 0.4;
-  margin-top: 80px;
-}
+p { margin: 30px 0; }
+.rose { font-size: 80px; margin: 50px 0; }
+.firma { margin-top: 60px; font-size: 22px; opacity: 0.9; }
+.headphones { font-size: 50px; margin-top: 100px; cursor: pointer; }
+.hint { font-size: 22px; opacity: 0.8; margin-top: 10px; }
+.namefoot { font-size: 14px; opacity: 0.4; margin-top: 80px; }
 </style>
 </head>
 <body>
 
+<h1 class="seo-title">Selcuk Kirci</h1>
+
 <p>Yo también pensé en ti.</p>
-
 <p class="rose">🥀</p>
-
 <p class="firma">Con cariño, tu 61.</p>
 
 <p class="headphones" onclick="playMusic()">🎧</p>
@@ -58,27 +62,14 @@ p {
 
 <p class="namefoot">Selcuk Kirci</p>
 
-<audio id="musica" loop autoplay>
+<audio id="musica" loop>
   <source src="Sen Anlat Karadeniz - Gitme Kal V3 (Vokal Versiyon).opus" type="audio/ogg">
 </audio>
 
 <script>
 var audio = document.getElementById('musica');
 audio.volume = 0.07;
-
-function playMusic() {
-  audio.play().catch(function(){});
-}
-
-// Autoplay beim Laden versuchen; wenn blockiert, erst nach Interaktion
-window.addEventListener('load', function() {
-  var p = audio.play();
-  if (p !== undefined) {
-    p.catch(function() {
-      // Autoplay wurde blockiert – dann startet es beim Klick auf 🎧 / Seite
-    });
-  }
-});
+function playMusic() { audio.play().catch(function(){}); }
 </script>
 
 </body>
