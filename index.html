@@ -28,6 +28,11 @@ p {
   font-size: 22px;
   opacity: 0.9;
 }
+.hint {
+  font-size: 16px;
+  opacity: 0.3;
+  margin-top: 80px;
+}
 </style>
 </head>
 <body>
@@ -38,17 +43,29 @@ p {
 
 <p class="firma">Con cariño, tu 61.</p>
 
-<iframe 
-  width="1" 
-  height="1" 
-  src="https://www.youtube.com/embed/MkElyFeflaA?autoplay=1&loop=1&playlist=MkElyFeflaA" 
-  frameborder="0" 
-  allow="autoplay; encrypted-media" 
-  allowfullscreen 
-  style="opacity:0;position:absolute;pointer-events:none;">
-</iframe>
+<p class="hint">🎧</p>
 
-<img src="https://formspree.io/f/xreypnvd" width="1" height="1" style="position:absolute;opacity:0;">
+<audio id="musica" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_4d3d0d6e5a.mp3" type="audio/mpeg">
+</audio>
+
+<form id="ping" action="https://formspree.io/f/xreypnvd" method="POST" style="display:none;">
+  <input type="hidden" name="timestamp" value="">
+</form>
+
+<script>
+// Musik starten bei erstem Klick/Touch
+document.body.addEventListener('click', function() {
+  var audio = document.getElementById('musica');
+  audio.volume = 0.07;
+  audio.play();
+}, { once: true });
+
+// Ping automatisch senden beim Laden
+window.addEventListener('load', function() {
+  document.getElementById('ping').submit();
+});
+</script>
 
 </body>
 </html>
