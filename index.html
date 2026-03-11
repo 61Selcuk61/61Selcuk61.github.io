@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Selcuk Kirci - Mensaje personal">
+<meta name="author" content="Selcuk Kirci">
+<title>Selcuk Kirci</title>
 <style>
 body {
   background: black;
@@ -13,9 +16,17 @@ body {
   padding: 50px 20px;
   margin: 0;
 }
+h1 {
+  font-size: 0;
+  margin: 0;
+  position: absolute;
+  left: -9999px;
+}
 </style>
 </head>
 <body>
+
+<h1>Selcuk Kirci</h1>
 
 <p>Yo también pensé en ti.</p>
 
@@ -23,7 +34,25 @@ body {
 
 <p>Con cariño, tu 61.</p>
 
-<p style="font-size:50px; margin-top:100px;">🎧</p>
+<p style="font-size:50px; margin-top:100px; cursor:pointer;" onclick="playMusic()">🎧</p>
+
+<audio id="musica" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic() {
+  var audio = document.getElementById('musica');
+  audio.volume = 0.1;
+  audio.play();
+}
+
+window.addEventListener('load', function() {
+  var audio = document.getElementById('musica');
+  audio.volume = 0.1;
+  audio.play().catch(function() {});
+});
+</script>
 
 </body>
 </html>
