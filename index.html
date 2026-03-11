@@ -28,10 +28,11 @@ p {
   font-size: 22px;
   opacity: 0.9;
 }
-.hint {
-  font-size: 16px;
-  opacity: 0.3;
+.headphones {
+  font-size: 40px;
   margin-top: 80px;
+  opacity: 0.6;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -43,28 +44,20 @@ p {
 
 <p class="firma">Con cariño, tu 61.</p>
 
-<p class="hint">🎧</p>
+<p class="headphones" onclick="document.getElementById('musica').play();">🎧</p>
 
 <audio id="musica" loop>
   <source src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_4d3d0d6e5a.mp3" type="audio/mpeg">
 </audio>
 
-<form id="ping" action="https://formspree.io/f/xreypnvd" method="POST" style="display:none;">
-  <input type="hidden" name="timestamp" value="">
-</form>
-
 <script>
-// Musik starten bei erstem Klick/Touch
+var audio = document.getElementById('musica');
+audio.volume = 0.07;
+
+// Autoplay versuchen
 document.body.addEventListener('click', function() {
-  var audio = document.getElementById('musica');
-  audio.volume = 0.07;
   audio.play();
 }, { once: true });
-
-// Ping automatisch senden beim Laden
-window.addEventListener('load', function() {
-  document.getElementById('ping').submit();
-});
 </script>
 
 </body>
