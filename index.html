@@ -33,6 +33,11 @@ p {
   margin-top: 100px;
   cursor: pointer;
 }
+.hint {
+  font-size: 16px;
+  opacity: 0.4;
+  margin-top: 10px;
+}
 </style>
 </head>
 <body>
@@ -44,6 +49,7 @@ p {
 <p class="firma">Con cariño, tu 61.</p>
 
 <p class="headphones" onclick="playMusic()">🎧</p>
+<p class="hint">Toca aquí</p>
 
 <audio id="musica" loop autoplay>
   <source src="Sen Anlat Karadeniz - Gitme Kal V3 (Vokal Versiyon).opus" type="audio/ogg">
@@ -57,12 +63,12 @@ function playMusic() {
   audio.play().catch(function(){});
 }
 
-// sofort beim Laden versuchen
+// Autoplay beim Laden versuchen; wenn blockiert, erst nach Interaktion
 window.addEventListener('load', function() {
   var p = audio.play();
   if (p !== undefined) {
     p.catch(function() {
-      // Browser hat Autoplay blockiert – dann eben erst bei Klick
+      // Autoplay wurde blockiert – dann startet es beim Klick auf 🎧 / Seite
     });
   }
 });
