@@ -1,116 +1,124 @@
 <!DOCTYPE html>
 <html lang="es-PA">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="hlSfNmU-T_xmSvdW3fU5GUd3_Icgc2t03_yxgAwaDHc" />
-<meta name="description" content="Selcuk Kirci - Mensaje personal de Panamá.">
-<link rel="alternate" href="https://61selcuk61.github.io/" hreflang="es-pa" />
-<title>Selcuk Kirci</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="hlSfNmU-T_xmSvdW3fU5GUd3_Icgc2t03_yxgAwaDHc" />
+    <meta name="description" content="Mensaje personal de Panamá.">
+    
+    <link rel="canonical" href="https://61selcuk61.github.io/" />
+    <link rel="alternate" href="https://61selcuk61.github.io/" hreflang="es-pa" />
+    
+    <title>Selcuk Kirci</title>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Selcuk Kirci",
-  "url": "https://61selcuk61.github.io",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Panamá",
-    "addressCountry": "PA"
-  }
-}
-</script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Selcuk Kirci",
+      "url": "https://61selcuk61.github.io",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Panamá",
+        "addressCountry": "PA"
+      },
+      "sameAs": [
+        "https://github.com/61selcuk61"
+      ]
+    }
+    </script>
 
-<style>
-body {
-  background: black;
-  color: white;
-  font-family: Georgia, serif;
-  font-size: 32px;
-  text-align: center;
-  padding: 50px 20px;
-  margin: 0;
-}
-/* Unsichtbarer Titel für den Google-Algorithmus (SEO) */
-.seo-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-p {
-  margin: 30px 0;
-}
-.rose {
-  font-size: 80px;
-  margin: 50px 0;
-}
-.firma {
-  margin-top: 60px;
-  font-size: 22px;
-  opacity: 0.9;
-}
-.headphones {
-  font-size: 50px;
-  margin-top: 100px;
-  cursor: pointer;
-}
-.hint {
-  font-size: 22px;
-  opacity: 0.8;
-  margin-top: 10px;
-}
-.namefoot {
-  font-size: 14px;
-  opacity: 0.4;
-  margin-top: 80px;
-}
-</style>
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 32px;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        /* SEO-Inhalte: Für Google sichtbar, für Menschen unsichtbar */
+        .seo-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        p {
+            margin: 30px 0;
+        }
+        .rose {
+            font-size: 80px;
+            margin: 50px 0;
+        }
+        .firma {
+            margin-top: 60px;
+            font-size: 22px;
+            opacity: 0.9;
+        }
+        .headphones {
+            font-size: 50px;
+            margin-top: 100px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .headphones:active {
+            transform: scale(0.9);
+        }
+        .hint {
+            font-size: 22px;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<h1 class="seo-only">Selcuk Kirci Panamá</h1>
+    <h1 class="seo-hidden">Selcuk Kirci Panamá</h1>
 
-<p>Yo también pensé en ti.</p>
+    <p>Yo también pensé en ti.</p>
 
-<p class="rose">🥀</p>
+    <p class="rose">🥀</p>
 
-<p class="firma">Con cariño, tu 61.</p>
+    <p class="firma">Con cariño, tu 61.</p>
 
-<p class="headphones" onclick="playMusic()">🎧</p>
-<p class="hint">Toca aquí</p>
+    <p class="headphones" onclick="playMusic()">🎧</p>
+    <p class="hint">Toca aquí</p>
 
-<p class="namefoot">Selcuk Kirci</p>
+    <div class="seo-hidden">Selcuk Kirci Panamá</div>
 
-<p style="font-size: 1px; opacity: 0.01;">Selcuk Kirci Panamá</p>
+    <audio id="musica" loop>
+        <source src="Sen Anlat Karadeniz - Gitme Kal V3 (Vokal Versiyon).opus" type="audio/ogg">
+    </audio>
 
-<audio id="musica" loop>
-  <source src="Sen Anlat Karadeniz - Gitme Kal V3 (Vokal Versiyon).opus" type="audio/ogg">
-</audio>
+    <script>
+        var audio = document.getElementById('musica');
+        audio.volume = 0.07;
 
-<script>
-var audio = document.getElementById('musica');
-audio.volume = 0.07;
+        function playMusic() {
+            audio.play().catch(function(e){ console.log("Playback blocked", e) });
+        }
 
-function playMusic() {
-  audio.play().catch(function(){});
-}
-
-// Autoplay Versuch
-window.addEventListener('load', function() {
-  var p = audio.play();
-  if (p !== undefined) {
-    p.catch(function() {
-      // Autoplay blockiert - wartet auf Interaktion (Klick auf 🎧)
-    });
-  }
-});
-</script>
+        // Autoplay-Versuch
+        window.addEventListener('load', function() {
+            var p = audio.play();
+            if (p !== undefined) {
+                p.catch(function() {
+                    // Warten auf Interaktion (Klick auf 🎧)
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
